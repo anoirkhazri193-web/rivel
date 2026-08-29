@@ -28,10 +28,11 @@ function Register() {
     if (data.user) {
       const { error: profileError } = await supabase
         .from('profiles')
-        .update({
+        .insert({
+          id: data.user.id,
           username: username,
+          role: 'user',
         })
-        .eq('id', data.user.id)
 
       if (profileError) {
         console.error(profileError)

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 import './Navbar.css'
 import { supabase } from '../supabase'
@@ -7,7 +8,7 @@ type CartItem = {
 }
 
 function Navbar() {
-  const [userEmail, setUserEmail] = useState<string | null>(null)
+  const [username, setUsername] = useState<string | null>(null)
   const [isAdmin, setIsAdmin] = useState(false)
   const [loading, setLoading] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -21,20 +22,19 @@ function Navbar() {
       } = await supabase.auth.getUser()
 
       if (!user) {
-        setUserEmail(null)
+        setUsername(null)
         setIsAdmin(false)
         setLoading(false)
         return
       }
 
-      setUserEmail(user.email ?? null)
-
       const { data: profile } = await supabase
         .from('profiles')
-        .select('role')
+        .select('username, role')
         .eq('id', user.id)
         .single()
 
+      setUsername(profile?.username ?? null)
       setIsAdmin(profile?.role === 'admin')
       setLoading(false)
     }
@@ -81,7 +81,7 @@ function Navbar() {
   async function handleLogout() {
     await supabase.auth.signOut()
 
-    setUserEmail(null)
+    setUsername(null)
     setIsAdmin(false)
     setMenuOpen(false)
     setMobileMenuOpen(false)
@@ -164,14 +164,14 @@ function Navbar() {
         <div className="navbar-actions">
           {!loading && (
             <>
-              {userEmail ? (
+              {username ? (
                 <div className="account-menu">
                   <button
                     type="button"
                     className="account-button"
                     onClick={() => setMenuOpen(!menuOpen)}
                   >
-                    {userEmail}
+                    {username}
 
                     <span className="account-arrow">
                       {menuOpen ? '▲' : '▼'}
@@ -220,3 +220,4 @@ function Navbar() {
 }
 
 export default Navbar
+
