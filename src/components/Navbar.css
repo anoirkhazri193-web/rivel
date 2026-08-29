@@ -1,0 +1,434 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  height: 90px;
+  background: #1297b8;
+  border-bottom: 1px solid #0e0f0e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.navbar-container {
+  width: 92%;
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navbar-logo {
+  color: #111111;
+  text-decoration: none;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  margin-right: 90px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  color: #222222;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.nav-link:hover {
+  color: #111111;
+  background: #fff3a6;
+}
+
+.nav-link.active {
+  background: #fff8cf;
+  font-weight: 600;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.navbar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: #1677ff;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #222222;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cart-count {
+  width: 21px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111111;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-menu {
+  position: relative;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.account-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  color: #222222;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  max-width: 220px;
+}
+
+.account-arrow {
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 190px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.account-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  background: #ffffff;
+  color: #222222;
+  text-decoration: none;
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.account-dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.logout-item {
+  color: #b00020;
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.mobile-menu-button {
+  display: none;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+  display: none;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .navbar-logo {
+    margin-right: 25px;
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+
+  .navbar-menu {
+    gap: 3px;
+  }
+
+  .nav-link {
+    padding: 9px 8px;
+    font-size: 13px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 750px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .navbar-container {
+    width: 95%;
+    height: 70px;
+    gap: 7px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-logo {
+    margin: 0;
+    font-size: 21px;
+    letter-spacing: 4px;
+    flex-shrink: 0;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #111111;
+    font-size: 27px;
+
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    flex-wrap: nowrap;
+  }
+
+  /* ACCOUNT */
+
+  .account-menu {
+    min-width: 0;
+    max-width: 105px;
+  }
+
+  .account-button {
+    max-width: 105px;
+    min-width: 0;
+    padding: 6px 0;
+
+    font-size: 10px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .account-arrow {
+    font-size: 8px;
+  }
+
+  /* CART */
+
+  .cart-button {
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .cart-button > span:first-child {
+    display: inline;
+  }
+
+  .cart-count {
+    width: 20px;
+    height: 20px;
+    font-size: 9px;
+  }
+
+  /* LOGIN */
+
+  .login-button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  /* MOBILE MENU */
+
+  .mobile-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #1297b8;
+
+    border-top: 1px solid #0e0f0e;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    z-index: 2000;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 16px 20px;
+
+    color: #222222;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu a:hover {
+    background: #fff3a6;
+  }
+}
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media (max-width: 430px) {
+  .navbar {
+    height: 64px;
+  }
+
+  .navbar-container {
+    width: 96%;
+    height: 64px;
+    gap: 5px;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+
+  .mobile-menu-button {
+    width: 34px;
+    height: 34px;
+    font-size: 23px;
+  }
+
+  .navbar-actions {
+    gap: 5px;
+  }
+
+  .account-menu {
+    max-width: 85px;
+  }
+
+  .account-button {
+    max-width: 85px;
+    font-size: 9px;
+  }
+
+  /* نخلي Panier ظاهر */
+  .cart-button > span:first-child {
+    display: inline;
+  }
+
+  .cart-button {
+    font-size: 9px;
+    gap: 3px;
+  }
+
+  .cart-count {
+    width: 19px;
+    height: 19px;
+    font-size: 9px;
+  }
+
+  .mobile-menu {
+    top: 64px;
+  }
+}

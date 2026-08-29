@@ -1,0 +1,52 @@
+.about {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 100px 0;
+}
+
+.about-intro {
+  max-width: 900px;
+  margin-bottom: 100px;
+}
+
+.about-intro span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #888;
+}
+
+.about-intro h1 {
+  font-size: clamp(48px, 7vw, 90px);
+  line-height: 0.95;
+  font-weight: 500;
+  margin: 20px 0 30px;
+}
+
+.about-intro p {
+  max-width: 600px;
+  font-size: 19px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.about-content h2 {
+  font-weight: 500;
+}
+
+.about-content p {
+  color: #666;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

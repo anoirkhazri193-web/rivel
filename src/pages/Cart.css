@@ -1,0 +1,35 @@
+.cart {
+  width: min(1000px, 92%);
+  margin: auto;
+  padding: 90px 0;
+}
+
+.cart-header span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #888;
+}
+
+.cart-header h1 {
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f7f7f7;
+}
+
+.empty-cart h2 {
+  font-weight: 500;
+}
+
+.empty-cart p {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.empty-cart a {
+  text-decoration: underline;
+}
